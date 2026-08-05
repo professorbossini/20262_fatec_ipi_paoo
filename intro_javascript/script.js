@@ -1,3 +1,18 @@
+var nome = 'José'
+console.log(nome)
+nome = "João"
+console.log(nome)
+
+// let nome = "Ana"
+// console.log(nome)
+// nome = "Ana Maria"
+// console.log(nome)
+
+
+// const nome = 'José'
+// console.log(nome)
+// nome = 'João'
+
 //começando...
 //const, let, var
 // a = 2
