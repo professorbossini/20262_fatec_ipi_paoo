@@ -1,15 +1,128 @@
+//promise
+//1 + 2 + 3 + ... + (n-2) + (n-1) + n
+const calculoRapidinho = (n) => {
+  return n >= 0 ? Promise.resolve((n / 2) * (n + 1)) : Promise.reject("Apenas positivos")
+}
+//tratar ambos os casos usando then ou catch
+calculoRapidinho(10)
+.then(res => console.log(`Resultado: ${res}`))
+.catch(erro => console.log(`Erro: ${erro}`))
+
+
+// calculoRapidinho(100).then((res) => {
+//   console.log(res)
+// })
+// console.log('Terminando script principal...')
+
+// function calculoDemorado(n){
+//   return new Promise(function(resolve, reject){
+//     let res = 0
+//     for(let i = 1; i <= n; i++){
+//       res += i
+//     }
+//     resolve(res)
+//   })
+// }
+// //construção then/catch
+// //calculoDemorado(100).then((resultado) => {console.log(resultado)})
+// const auxiliar = calculoDemorado(100)
+// auxiliar.then(function(res){
+//   console.log(res)
+// })
+
+
+
+// //CPU-Bound: dominada por cálculos, continhas (um loop que soma de 1 a 100)
+// //IO-Bound: dominada por operações de entrada e saída(acesso a arquivos, requisições HTTP)
+// const fs = require('fs')//file system
+// console.log("A")
+// //callback hell
+// //inferno de callbacks
+// const abrirArquivo = function (nomeArquivo){
+//   //definir uma função callback
+//   const exibirConteudo = function(erro, conteudo){
+//     if(erro){
+//       console.log(`Deu erro: ${erro}`)
+//     }
+//     else{
+//       console.log(conteudo.toString())
+//       const dobro = +conteudo.toString() * 2
+//       const finalizar = function(erro){
+//         if(erro){
+//           console.log('Erro ao salvar o dobro')
+//         }
+//         else{
+//           console.log('Salvou o dobro ok')
+//           const outra = function(){
+
+//           }
+//           fs.readFile('arquivo.txt', outra)
+//         }
+//         console.log("F")
+//       }
+//       fs.writeFile('dobro.txt', dobro.toString(), finalizar)
+//       console.log("E")
+//     }
+//     console.log("D")
+//   }
+//   //chamar a função de leitura do arquivo do módulo fs, entregando a callback como parâmetro
+//   fs.readFile(nomeArquivo, exibirConteudo)
+//   console.log("C")
+// }
+// abrirArquivo("arquivo.txt")
+// console.log("B")
+
+// const idade = 18
+// //Minha idade é 18
+// //concatenação
+// console.log("Minha idade é " + idade)
+// //interpolação
+// console.log(`Minha idade é ${idade}`)
+// console.log('script principal começou...')
+// setTimeout(() => {
+//   console.log('dentro da timeout...')
+// }, 0)
+// const data = new Date().getTime() + 10000
+// while(new Date().getTime() <= data);
+// console.log('script principal terminou...')
+
+
+// function demorada(){
+//   const atualMais2Segundos = new Date().getTime() + 2000
+//   while(new Date().getTime() <= atualMais2Segundos);
+//   const d = 8 + 4
+//   return d
+// }
+// const a = 2 + 3
+// const b = 5 + 9
+// // const d = demorada()
+// setTimeout(() => {
+//   const d = demorada()
+//   console.log(`d: ${d}`)
+// const e = 2 + a + b
+// console.log(`e: ${e}`)
+
+// const a = 2 + 7
+// const b = 5
+// console.log(a + b)
+
+// console.log('Eu primeiro...')
+// console.log('Agora eu')
+// console.log('Sempre vou ser a última...:(')
+
+
 //objetos Javascript
 //objeto JSON (JavaScript Object Notation)
 //uma calculadora realiza as operações de soma e subtração
-const calculadora = {
-  somar: function(a, b){
-    return a + b
-  },
-  subtrair: (a, b) => a + b
-}
+// const calculadora = {
+//   somar: function(a, b){
+//     return a + b
+//   },
+//   subtrair: (a, b) => a + b
+// }
 
-console.log(calculadora.somar(2, 3))
-console.log(calculadora.subtrair(5, 4))
+// console.log(calculadora.somar(2, 3))
+// console.log(calculadora.subtrair(5, 4))
 
 
 
