@@ -15,7 +15,6 @@ const funcoes = {
     observacoes.push(observacao)
     //ajustar a baseConsulta para que ela aponte para a lista
     baseConsulta[observacao.lembreteId]['observacoes'] = observacoes
-
   }
 }
 
@@ -27,8 +26,7 @@ app.get('/lembretes', (req, res) => {
 app.post('/eventos', function(req, res){
   const evento = req.body
   console.log(evento)
-  funcoes[evento.tipo](evento.dados)
-  
+  funcoes[evento.tipo](evento.dados)  
 })  
 const port = 6000
 app.listen(port, () => console.log(`Consulta. Porta ${port}.`))
