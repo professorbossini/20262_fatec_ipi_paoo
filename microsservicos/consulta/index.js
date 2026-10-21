@@ -15,6 +15,11 @@ const funcoes = {
     observacoes.push(observacao)
     //ajustar a baseConsulta para que ela aponte para a lista
     baseConsulta[observacao.lembreteId]['observacoes'] = observacoes
+  },
+  ObservacaoAtualizada: (observacao) => {
+    const observacoes = baseConsulta[observacao.lembreteId]['observacoes']
+    const indice = observacoes.findIndex(o => o.id === observacao.id)
+    observacoes[indice] = observacao
   }
 }
 
@@ -24,9 +29,13 @@ app.get('/lembretes', (req, res) => {
 })
 //POST /eventos
 app.post('/eventos', function(req, res){
-  const evento = req.body
-  console.log(evento)
-  funcoes[evento.tipo](evento.dados)  
+  try{
+    const evento = req.body
+    console.log(evento)
+    funcoes[evento.tipo](evento.dados)  
+  }
+  catch(e){}
+  res.end()
 })  
 const port = 6000
 app.listen(port, () => console.log(`Consulta. Porta ${port}.`))
