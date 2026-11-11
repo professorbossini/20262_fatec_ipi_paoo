@@ -30,7 +30,7 @@ app.post("/lembretes", async (req, res) => {
     texto: texto
   }
   lembretes[id] = lembrete
-  await axios.post('http://localhost:10000/eventos', {
+  await axios.post('http://10.89.216.167:10000/eventos', {
     tipo: 'LembreteCriado',
     dados: lembrete
   })

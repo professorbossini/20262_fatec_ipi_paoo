@@ -12,16 +12,16 @@ app.post('/eventos', async (req, res) => {
   eventos.push(evento)
   //enviar via post para todos os mss
   try{
-    await axios.post('http://localhost:4000/eventos', evento)
+    await axios.post('http://10.89.216.167:4000/eventos', evento)
   }catch(e){}
   try{
-    await axios.post('http://localhost:5000/eventos', evento)
+    await axios.post('http://10.89.216.167:5000/eventos', evento)
   }catch(e){}
   try{
-    await axios.post('http://localhost:6000/eventos', evento)
+    await axios.post('http://10.89.216.167:6000/eventos', evento)
   }catch(e){}
   try{
-    await axios.post('http://localhost:7000/eventos', evento)
+    await axios.post('http://10.89.216.167:7000/eventos', evento)
   }
   catch(e){}
   res.end()
